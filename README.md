@@ -3,14 +3,14 @@
 Github-like tracker for year-long goals.
 
 ## Technologies Used
-Javascript
-Express
-Mongodb
-Mongoose
-Nodejs
-Liquidjs
-Bcrypt
-SASS
+* Javascript
+* Express
+* Mongodb
+* Mongoose
+* Nodejs
+* Liquidjs
+* Bcrypt
+* SASS
 
 ## User Stories
 User will be able to
