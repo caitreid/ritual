@@ -1,6 +1,6 @@
 # Ritual | Goal Planning App
 
-Github-like tracker for year-long goals.
+Real progress comes from working on a goal every day. Github-like tracker for year-long ambitions.
 
 ## Technologies Used
 * Javascript
