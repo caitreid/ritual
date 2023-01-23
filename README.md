@@ -61,4 +61,4 @@ User will be able to
 <br>
 
 # ERD
-<img src="./images/ERD.jpg">![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/caitlinreid/Development/ga/projects/ritual/images/ERD.jpg)
+<img src="./images/ERD.jpg">
