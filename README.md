@@ -19,18 +19,6 @@ User will be able to
 - Be presented with a Github commit log-like representation of their daily activities
 - Receive kudos from the app from multi-day streaks
 
-## Models
-### User
-- id (Num)
-- Name (String)
-- username (String)
-- Password (String)
-
-### Goal
-- Name (String)
-- Log (Object)
-- User association
-
 <br>
 
 <br>
@@ -62,3 +50,18 @@ User will be able to
 
 # ERD
 <img src="./images/ERD.jpg">
+
+## Models
+### User
+- id (Num)
+- First Name (String)
+- Last Name (String)
+- Email (String)
+- Password (String)
+
+### Activity
+- Title (String)
+- Date (Date)
+- Category (Array)
+- Description (Long Text)
+- User association (User Ref)
