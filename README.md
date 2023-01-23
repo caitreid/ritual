@@ -31,29 +31,30 @@ User will be able to
 - Log (Object)
 - User association
 
-# Projects Goals
-- Work with a mobile-first approach
-- Demonstrate app goals when user arrives on landing page
+<br>
 
+<br>
 
+# Wireframes
 
-## Wireframes
+<br>
+<img src="./images/1_First.jpg" /> 
 
-### Welcome
-<div styles="border:1px solid grey;">
-<img src="./images/1_Welcome.jpg" styles="width:100px; border:1px solid grey;"></div>
+<br>
+<img src="./images/2_Sign-in.jpg" styles="width:100px;">
 
-<div styles="border:1px solid grey;">
-<img src="./images/2_Sign-up.jpg" styles="width:100px; border:1px solid grey;"></div>
+<br>
+<img src="./images/3_Sign-up.jpg" styles="width:100px;">
 
-<div styles="border:1px solid grey;">
-<img src="./images/3_Home.jpg" styles="width:100px; border:1px solid grey;"></div>
+<br>
+<img src="./images/4_Home.jpg" styles="width:100px;">
 
-<div styles="border:1px solid grey;">
-<img src="./images/4_New-activity.jpg" styles="width:100px; border:1px solid grey;"></div>
+<br>
+<img src="./images/5_New-activity.jpg" styles="width:100px;">
 
-<div styles="border:1px solid grey;">
-<img src="./images/5_Daily-log.jpg" styles="width:100px; border:1px solid grey;"></div>
+<br>
+<img src="./images/6_My-log-daily.jpg" styles="width:100px;">
 
-<div styles="border:1px solid grey;">
-<img src="./images/6_Annual-log.jpg" styles="width:100px; border:1px solid grey;"></div>
+<br>
+<img src="./images/7_My-log-annual.jpg" styles="width:100px;">
+
