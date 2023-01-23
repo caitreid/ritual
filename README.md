@@ -33,4 +33,4 @@ User will be able to
 # Projects Goals
 - Work with a mobile-first approach
 - Demonstrate app goals when user arrives on landing page
-- 
+
