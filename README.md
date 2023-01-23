@@ -1,4 +1,4 @@
-# Ritual | Goal Planning App
+# Ritual
 
 Real progress comes from working on a goal every day. Ritual is a github-like tracker for year-long ambitions.
 
