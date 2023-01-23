@@ -29,6 +29,7 @@ User will be able to
 ### Goal
 - Name (String)
 - Log (Object)
+- User association
 
 # Projects Goals
 - Work with a mobile-first approach
