@@ -57,4 +57,8 @@ User will be able to
 
 <br>
 <img src="./images/7_My-log-annual.jpg" styles="width:100px;">
+<br>
+<br>
 
+# ERD
+<img src="./images/ERD.jpg">![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/caitlinreid/Development/ga/projects/ritual/images/ERD.jpg)
