@@ -49,7 +49,7 @@ User will be able to
 <br>
 
 # ERD
-<img src="./images/ERD.jpg">
+<img src="./images/ERD.png">
 
 ## Models
 ### User
