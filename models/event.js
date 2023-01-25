@@ -3,16 +3,23 @@ const mongoose = require('./connection')
 
 // import user model for populate
 const User = require('./user')
+const Project = require('./project')
 
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
 
-const activitySchema = new Schema(
+const eventSchema = new Schema(
 	{
 		title: { type: String, required: true },
 		description: { type: String, required: false },
-        // amount: { type: Number, required: true },
-		// ready: { type: Boolean, required: true },
+		project: {
+			type: Schema.Types.ObjectID,
+			ref: 'Project'
+		},
+		// category: {
+		// 	type: Schema.Types.CategoryID,
+		// 	ref: 'Category'
+		// },
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',
@@ -21,9 +28,9 @@ const activitySchema = new Schema(
 	{ timestamps: true }
 )
 
-const Activity = model('Activity', activitySchema)
+const Event = model('Event', eventSchema)
 
 /////////////////////////////////
 // Export our Model
 /////////////////////////////////
-module.exports = Activity
+module.exports = Event

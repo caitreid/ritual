@@ -12,8 +12,7 @@ const projectSchema = new Schema(
 		title: { type: String, required: true },
 		description: { type: String, required: false },
 		due: { type: Date, required: false },
-		activities: { type: Array, required: false }, // if I want to use IDs
-		// activities: [Activity],
+		events: { type: Array, required: false }, // if I want to use IDs
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',
