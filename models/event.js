@@ -6,7 +6,7 @@ const User = require('./user')
 const Project = require('./project')
 
 // destructure the schema and model constructors from mongoose
-const { Schema, model } = mongoose
+const { Schema } = mongoose
 
 const eventSchema = new Schema(
 	{
@@ -16,10 +16,6 @@ const eventSchema = new Schema(
 			type: Schema.Types.ObjectID,
 			ref: 'Project'
 		},
-		// category: {
-		// 	type: Schema.Types.CategoryID,
-		// 	ref: 'Category'
-		// },
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',
@@ -28,9 +24,10 @@ const eventSchema = new Schema(
 	{ timestamps: true }
 )
 
-const Event = model('Event', eventSchema)
+
+// const Event = model('Event', eventSchema)
 
 /////////////////////////////////
 // Export our Model
 /////////////////////////////////
-module.exports = Event
+module.exports = eventSchema
