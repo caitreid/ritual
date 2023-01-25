@@ -84,10 +84,10 @@ router.get('/:id/edit', (req, res) => {
 		})
 })
 
-// update route
+// Update 
 router.put('/:id', (req, res) => {
 	const projectId = req.params.id
-	req.body.ready = req.body.ready === 'on' ? true : false
+	// req.body.ready = req.body.ready === 'on' ? true : false
 
 	Project.findByIdAndUpdate(projectId, req.body, { new: true })
 		.then(project => {

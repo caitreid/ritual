@@ -3,7 +3,7 @@
 <div class="container-sm p-5">
     <form action="/projects?_method=PUT" method="POST">
         <fieldset>
-            <legend>Create New Project</legend>
+            <legend><b>Edit:</b> {{ project.title | capitalize }} </legend>
             <div class="py-2">
                 <label class="form-label">Title: </label>
                 <input 
@@ -15,25 +15,33 @@
                 >
             </div>
             <div class="py-2">
-                <label class="form-label">Due Date:</label>
-                <input 
-                    type="Date" 
-                    name="due" 
-                    placeholder="{{ project.date }}" 
-                    value="{{ project.date }}"
-                    class="form-control"
-                >
-            </div>
-            <div class="py-2">
                 <label class="form-label">Description:</label>
                 <input 
                     type="text" 
                     name="description" 
                     placeholder="{{ project.description }}" 
-                    value="{{ project.description }}"
+                    value="{{ project.description }}" 
                     class="form-control"
                 >
             </div>
+            <!--
+            <label class="form-label">Amount:</label>
+            <input 
+                type="number" 
+                name="amount"
+                value="{{ project.amount }}"
+                class="form-control"
+            >
+            <label class="form-label">Ready:</label>
+            <input 
+                type="checkbox" 
+                name="ready" 
+                class="form-check-input"
+                {% if project.ready %}
+                    checked
+                {% endif %}
+            >
+            -->
         </fieldset>
         <input type="submit" value="Save" class="btn btn-success">
     </form>
