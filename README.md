@@ -53,14 +53,12 @@ User will be able to
 
 ## Models
 ### User
-- id (Num)
 - First Name (String)
 - Last Name (String)
 - Email (String)
 - Password (String)
 
 ### Project
-- ID
 - Title (String)
 - Due (Date)
 - Activities (Array)
@@ -72,6 +70,9 @@ User will be able to
 - Description (Long Text)
 - User association (User Reference)
 - Project Association (Project Reference)
+
+## Category
+- Title
 
 
 ## Route tables for documents

@@ -1,0 +1,41 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-sm p-5">
+    <form action="/projects?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Create New Project</legend>
+            <div class="py-2">
+                <label class="form-label">Title: </label>
+                <input 
+                    type="text" 
+                    name="title" 
+                    placeholder="{{ project.title }}"
+                    value="{{ project.title }}"
+                    class="form-control"
+                >
+            </div>
+            <div class="py-2">
+                <label class="form-label">Due Date:</label>
+                <input 
+                    type="Date" 
+                    name="due" 
+                    placeholder="{{ project.date }}" 
+                    value="{{ project.date }}"
+                    class="form-control"
+                >
+            </div>
+            <div class="py-2">
+                <label class="form-label">Description:</label>
+                <input 
+                    type="text" 
+                    name="description" 
+                    placeholder="{{ project.description }}" 
+                    value="{{ project.description }}"
+                    class="form-control"
+                >
+            </div>
+        </fieldset>
+        <input type="submit" value="Save" class="btn btn-success">
+    </form>
+</div>
+{% endblock %}

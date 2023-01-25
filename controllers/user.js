@@ -33,6 +33,7 @@ router.post('/signup', async (req, res) => {
 		})
 		// if an error occurs, send err
 		.catch((error) => {
+			console.log('this is the error: \n', error)
 			res.redirect(`/error?error=${error}`)
 		})
 })
@@ -69,7 +70,7 @@ router.post('/login', async (req, res) => {
           			const { username, loggedIn, userId } = req.session
 
 					console.log('session user id', req.session.userId)
-					// redirect to /examples if login is successful
+					// redirect to /projects if login is successful
 					res.redirect('/')
 				} else {
 					// send an error if the password doesnt match

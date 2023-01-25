@@ -1,23 +1,23 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 class="display-6">All Examples</h2>
+    <h2 class="display-6">All Activitys</h2>
     <div class="row">
-        {% for example in examples %}
+        {% for activity in activitys %}
         <div class="card" style="width: 18rem;">
-            <h5 class="card-header">{{ example.title }}</h5>
+            <h5 class="card-header">{{ activity.title }}</h5>
             <div class="card-body">
                 <h5 class="card-title">
-                    Ready?: {{ example.ready }}
+                    Ready?: {{ activity.ready }}
                 </h5>
                 <p class="card-text">
-                    Body: {{ example.body }}
+                    Body: {{ activity.body }}
                 </p>
                 <p class="card-text">
-                    Amount: {{ example.amount }}
+                    Amount: {{ activity.amount }}
                 </p>
-                <a href="/examples/{{ example.id }}" class="btn btn-info">
-                    View {{ example.title }}
+                <a href="/activitys/{{ activity.id }}" class="btn btn-info">
+                    View {{ activity.title }}
                 </a>
             </div>
         </div>
