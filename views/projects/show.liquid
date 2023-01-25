@@ -8,6 +8,8 @@
         <br>
         {% if project.due %}
             <p><b>Due:</b> {{ project.due | date: "%A, %B %d, %Y"}}</p>
+            {% else %}
+            <p>No Due Date Assigned.</p>
         {% endif %}
         {% if project.description %}
             <p><b>Description:</b> {{ project.description }}</p>
@@ -23,5 +25,7 @@
         </div>
         {% endif %}
     </article>
+    <br>
+    <p>Return to <a href="/projects">home</a>.</p>
 </div>
 {% endblock %}

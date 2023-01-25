@@ -1,0 +1,26 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+  <div class="container-md p-5">
+    <article>
+      <h2>
+        {{ event.title | capitalize }}
+      </h2>
+      <p>Description: {{ event.description }}</p>
+      {% if event.owner == userId %}
+        <div class="btn-group">
+
+          <a href="/events/{{ event.id }}/edit" class="btn btn-primary">Edit</a>
+          <form action="/events/{{ event.id }}?_method=DELETE" method="POST">
+            <input
+              type="submit"
+              value="Delete"
+              class="btn btn-danger">
+          </form>
+        </div>
+      {% endif %}
+      <br>
+      <br>
+      <p>Return to <a href="/projects">home</a>.</p>
+    </article>
+  </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-sm p-5">
+    <form action="/events" method="POST">
+        <fieldset>
+            <legend>Create New event</legend>
+            <div class="py-2">
+                <label class="form-label">Title: </label>
+                <input 
+                    type="text" 
+                    name="title" 
+                    placeholder="Event title"
+                    class="form-control"
+                >
+            </div>
+            <div class="py-2">
+                <label class="form-label">Description:</label>
+                <input 
+                    type="text" 
+                    name="description" 
+                    placeholder="Description" 
+                    class="form-control"
+                >
+            </div>
+            <!--
+            <div class="py-2">
+                <label class="form-label">Project:</label>
+                {% if project.length > 0 %}
+                <div>
+                {% include 'dropdown-filter' %}
+                </div>
+                {% endif %}
+            </div>
+            -->
+        </fieldset>
+        <input type="submit" value="Create New Event" class="btn btn-success">
+    </form>
+</div>
+{% endblock %}

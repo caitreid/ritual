@@ -16,6 +16,13 @@
                         <b>Description: </b>
                         <p>{{ project.description }}</p>
                     {% endif %}
+                    {% if project.events %}
+                        <b>Description: </b>
+                        {% for event in events %}
+                            <li> {{ event }} </li>
+                        {% endfor %}
+                    {% endif %}
+
                     <a href="/projects/{{ project.id }}" class="btn btn-info">
                         View
                     </a>
@@ -28,3 +35,4 @@
     </div>
 </div>
 {% endblock %}
+
