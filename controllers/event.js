@@ -1,6 +1,6 @@
 // Import Dependencies
 const express = require('express')
-const Activity = require('../models/activity')
+const Event = require('../models/event')
 
 // Create router
 const router = express.Router()
@@ -23,25 +23,25 @@ router.use((req, res, next) => {
 
 // index ALL
 router.get('/', (req, res) => {
-	Activity.find({})
-		.then(activities => {
+	Event.find({})
+		.then(events => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
 			
-			res.render('activities/index', { activities, username, loggedIn })
+			res.render('events/index', { events, username, loggedIn })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
 
-// index that shows only the user's activities
+// index that shows only the user's events
 router.get('/mine', (req, res) => {
     // destructure user info from req.session
     const { username, userId, loggedIn } = req.session
-	Activity.find({ owner: userId })
-		.then(activities => {
-			res.render('activities/index', { activities, username, loggedIn })
+	Event.find({ owner: userId })
+		.then(events => {
+			res.render('events/index', { events, username, loggedIn })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -51,18 +51,18 @@ router.get('/mine', (req, res) => {
 // new route -> GET route that renders our page with the form
 router.get('/new', (req, res) => {
 	const { username, userId, loggedIn } = req.session
-	res.render('activities/new', { username, loggedIn })
+	res.render('events/new', { username, loggedIn })
 })
 
 // create -> POST route that actually calls the db and makes a new document
 router.post('/', (req, res) => {
-	req.body.ready = req.body.ready === 'on' ? true : false
+	// req.body.ready = req.body.ready === 'on' ? true : false
 
 	req.body.owner = req.session.userId
-	Activity.create(req.body)
-		.then(activity => {
-			console.log('this was returned from create', activity)
-			res.redirect('/activities')
+	Event.create(req.body)
+		.then(event => {
+			console.log('this was returned from create', event)
+			res.redirect('/events')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -72,10 +72,10 @@ router.post('/', (req, res) => {
 // edit route -> GET that takes us to the edit form view
 router.get('/:id/edit', (req, res) => {
 	// we need to get the id
-	const activityId = req.params.id
-	Activity.findById(activityId)
-		.then(activity => {
-			res.render('activities/edit', { activity })
+	const eventId = req.params.id
+	Event.findById(eventId)
+		.then(event => {
+			res.render('events/edit', { event })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -84,12 +84,12 @@ router.get('/:id/edit', (req, res) => {
 
 // update route
 router.put('/:id', (req, res) => {
-	const activityId = req.params.id
+	const eventId = req.params.id
 	req.body.ready = req.body.ready === 'on' ? true : false
 
-	Activity.findByIdAndUpdate(activityId, req.body, { new: true })
-		.then(activity => {
-			res.redirect(`/activities/${activity.id}`)
+	Event.findByIdAndUpdate(eventId, req.body, { new: true })
+		.then(event => {
+			res.redirect(`/events/${event.id}`)
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -98,11 +98,11 @@ router.put('/:id', (req, res) => {
 
 // show route
 router.get('/:id', (req, res) => {
-	const activityId = req.params.id
-	Activity.findById(activityId)
-		.then(activity => {
+	const eventId = req.params.id
+	Event.findById(eventId)
+		.then(event => {
             const {username, loggedIn, userId} = req.session
-			res.render('activity/show', { activity, username, loggedIn, userId })
+			res.render('events/show', { event, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -111,10 +111,10 @@ router.get('/:id', (req, res) => {
 
 // delete route
 router.delete('/:id', (req, res) => {
-	const activityId = req.params.id
-	Activity.findByIdAndRemove(activityId)
-		.then(activity => {
-			res.redirect('/activities')
+	const eventId = req.params.id
+	Event.findByIdAndRemove(eventId)
+		.then(event => {
+			res.redirect('/events')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
