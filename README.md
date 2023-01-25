@@ -59,9 +59,31 @@ User will be able to
 - Email (String)
 - Password (String)
 
+### Project
+- ID
+- Title (String)
+- Due (Date)
+- Activities (Array)
+
 ### Activity
 - Title (String)
 - Date (Date)
 - Category (Array)
 - Description (Long Text)
-- User association (User Ref)
+- User association (User Reference)
+- Project Association (Project Reference)
+
+
+## Route tables for documents
+
+#### Projects
+
+| **URL**          | **HTTP Verb**|**Action**|
+|------------------|--------------|----------|
+| /projects/         | GET          | index  
+| /projects/:id      | GET          | show       
+| /projects/new      | GET          | new   
+| /projects          | POST         | create   
+| /projects/:id/edit | GET          | edit       
+| /projects/:id      | PATCH/PUT    | update    
+| /projects/:id      | DELETE       | destroy  
