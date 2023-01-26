@@ -1,6 +1,6 @@
 // Import Dependencies
 const express = require('express')
-const Example = require('../models/example')
+const Project = require('../models/project')
 
 // Create router
 const router = express.Router()
@@ -22,26 +22,29 @@ router.use((req, res, next) => {
 // Routes
 
 // index ALL
+// i dont think we'll want to show ALL events/projects from ALL users
+// so this may need to go?
 router.get('/', (req, res) => {
-	Example.find({})
-		.then(examples => {
+	Project.find({})
+		.then(projects => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
 			
-			res.render('examples/index', { examples, username, loggedIn })
+			res.render('projects/index', { projects, username, loggedIn })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
 
-// index that shows only the user's examples
+// index that shows only the user's projects
+// This is the most important one... what are MY projects? and their events
 router.get('/mine', (req, res) => {
     // destructure user info from req.session
     const { username, userId, loggedIn } = req.session
-	Example.find({ owner: userId })
-		.then(examples => {
-			res.render('examples/index', { examples, username, loggedIn })
+	Project.find({ owner: userId })
+		.then(projects => {
+			res.render('projects/index', { projects, username, loggedIn })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -49,20 +52,21 @@ router.get('/mine', (req, res) => {
 })
 
 // new route -> GET route that renders our page with the form
+// do we need to send userID? the variable is declared but never read
 router.get('/new', (req, res) => {
 	const { username, userId, loggedIn } = req.session
-	res.render('examples/new', { username, loggedIn })
+	res.render('projects/new', { username, loggedIn })
 })
 
 // create -> POST route that actually calls the db and makes a new document
 router.post('/', (req, res) => {
-	req.body.ready = req.body.ready === 'on' ? true : false
+	// req.body.ready = req.body.ready === 'on' ? true : false
 
 	req.body.owner = req.session.userId
-	Example.create(req.body)
-		.then(example => {
-			console.log('this was returned from create', example)
-			res.redirect('/examples')
+	Project.create(req.body)
+		.then(project => {
+			console.log('this was returned from create', project)
+			res.redirect('/projects')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -72,24 +76,25 @@ router.post('/', (req, res) => {
 // edit route -> GET that takes us to the edit form view
 router.get('/:id/edit', (req, res) => {
 	// we need to get the id
-	const exampleId = req.params.id
-	Example.findById(exampleId)
-		.then(example => {
-			res.render('examples/edit', { example })
+	const projectId = req.params.id
+	Project.findById(projectId)
+		.then(project => {
+			res.render('projects/edit', { project })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
 
-// update route
+// Update 
 router.put('/:id', (req, res) => {
-	const exampleId = req.params.id
-	req.body.ready = req.body.ready === 'on' ? true : false
+	const projectId = req.params.id
+	// req.body.ready = req.body.ready === 'on' ? true : false
+	// console.log('req.params ', req.params)
 
-	Example.findByIdAndUpdate(exampleId, req.body, { new: true })
-		.then(example => {
-			res.redirect(`/examples/${example.id}`)
+	Project.findByIdAndUpdate(projectId, req.body, { new: true })
+		.then(project => {
+			res.redirect(`/projects/${project.id}`)
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -98,11 +103,11 @@ router.put('/:id', (req, res) => {
 
 // show route
 router.get('/:id', (req, res) => {
-	const exampleId = req.params.id
-	Example.findById(exampleId)
-		.then(example => {
+	const projectId = req.params.id
+	Project.findById(projectId)
+		.then(project => {
             const {username, loggedIn, userId} = req.session
-			res.render('examples/show', { example, username, loggedIn, userId })
+			res.render('projects/show', { project, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -111,10 +116,10 @@ router.get('/:id', (req, res) => {
 
 // delete route
 router.delete('/:id', (req, res) => {
-	const exampleId = req.params.id
-	Example.findByIdAndRemove(exampleId)
-		.then(example => {
-			res.redirect('/examples')
+	const projectId = req.params.id
+	Project.findByIdAndRemove(projectId)
+		.then(project => {
+			res.redirect('/projects')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)

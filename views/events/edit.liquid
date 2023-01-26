@@ -1,0 +1,34 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-sm p-5">
+    <form action="/events/{{event.id}}?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Create New Event</legend>
+            <div class="py-2">
+                <label class="form-label">Title: </label>
+                <input 
+                    type="text" 
+                    name="title" 
+                    placeholder="{{ event.title }}"
+                    value="{{ event.title }}"
+                    class="form-control"
+                >
+            </div>
+            <div class="py-2">
+                <label class="form-label">Description:</label>
+                <input 
+                    type="text" 
+                    name="description" 
+                    placeholder="{{ event.description }}" 
+                    value="{{ event.description }}" 
+                    class="form-control"
+                >
+            </div>
+        </fieldset>
+        <br>
+        <input type="submit" value="Save Event" class="btn btn-success">
+    </form>
+    <br><br>
+    <p>Return to <a href="/projects">home</a>.</p>
+</div>
+{% endblock %}

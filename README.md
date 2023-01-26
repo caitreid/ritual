@@ -61,9 +61,10 @@ User will be able to
 ### Project
 - Title (String)
 - Due (Date)
-- Activities (Array)
+- Events (Array)
 
-### Activity
+### Events
+
 - Title (String)
 - Date (Date)
 - Category (Array)

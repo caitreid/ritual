@@ -1,0 +1,75 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+  <div class="container-sm p-5">
+    <form action="/projects/{{project.id}}?_method=PUT" method="POST">
+      <fieldset>
+        <legend>
+          <b>Edit:</b>
+          {{ project.title | capitalize }}
+        </legend>
+        <div class="py-2">
+          <label class="form-label">Title:
+          </label>
+          <input
+            type="text"
+            name="title"
+            placeholder="{{ project.title }}"
+            value="{{ project.title }}"
+            class="form-control">
+        </div>
+        <div class="py-2">
+            <label class="form-label">Due Date:</label>
+            <input
+                type="date"
+                name="due"
+                placeholder="{{ project.due }}"
+                value="{{ project.due }}"
+                class="form-control">
+            
+            <!--
+            <label class="form-label">Due Date:</label>
+            <input 
+                type="Date" 
+                name="due" 
+                placeholder="" 
+                class="form-control"
+            >
+            -->
+        </div>
+        <div class="py-2">
+          <label class="form-label">Description:</label>
+          <input
+            type="text"
+            name="description"
+            placeholder="{{ project.description }}"
+            value="{{ project.description }}"
+            class="form-control">
+        </div>
+        <!--
+        <label class="form-label">Amount:</label>
+        <input 
+        type="number" 
+        name="amount"
+        value="{{ project.amount }}"
+        class="form-control"
+        >
+        <label class="form-label">Ready:</label>
+        <input 
+        type="checkbox" 
+        name="ready" 
+        class="form-check-input"
+        {% if project.ready %}
+        checked
+        {% endif %}
+        >
+        -->
+      </fieldset>
+      <input
+        type="submit"
+        value="Save"
+        class="btn btn-success">
+    </form>
+    <br><br>
+    <p>Return to <a href="/projects">home</a>.</p>
+  </div>
+{% endblock %}

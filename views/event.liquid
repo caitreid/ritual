@@ -1,0 +1,14 @@
+{% block content %}
+    <div class="card mb-4 shadow">
+        <div class="card-body">
+            <h4>{{ event.title }}</h4>
+            <p>{{ event.description }}</p>
+            <p>{{ event.date | date: "%A, %B %d, %Y" }}</p>
+            <div class="d-flex justify-content-between">
+                <form action="/events/delete/{{ project.id }}/{{ event.id }}?_method=DELETE" method="POST">
+                    <input class="btn btn-danger" type="submit" value="X">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
