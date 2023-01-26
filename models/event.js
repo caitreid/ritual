@@ -12,7 +12,15 @@ const eventSchema = new Schema(
 	{
 		title: { type: String, required: true },
 		description: { type: String, required: false },
-		date: { type: Date, required: true }
+		date: { type: Date, required: true },
+		category: {
+			type: Schema.Types.ObjectID,
+			ref: 'Category'
+		},
+		project: {
+			type: Schema.Types.ObjectID,
+			ref: 'Project'
+		},
 		// category: { type: Array, required: true }
 		// project: {
 		// 	type: Schema.Types.ObjectID,
