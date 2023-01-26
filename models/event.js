@@ -3,7 +3,7 @@ const mongoose = require('./connection')
 
 // import user model for populate
 const User = require('./user')
-const Project = require('./project')
+// const Project = require('./project')
 
 // destructure the schema and model constructors from mongoose
 const { Schema } = mongoose
@@ -12,14 +12,16 @@ const eventSchema = new Schema(
 	{
 		title: { type: String, required: true },
 		description: { type: String, required: false },
-		project: {
-			type: Schema.Types.ObjectID,
-			ref: 'Project'
-		},
-		owner: {
-			type: Schema.Types.ObjectID,
-			ref: 'User',
-		}
+		date: { type: Date, required: true }
+		// category: { type: Array, required: true }
+		// project: {
+		// 	type: Schema.Types.ObjectID,
+		// 	ref: 'Project'
+		// },
+		// owner: {
+		// 	type: Schema.Types.ObjectID,
+		// 	ref: 'User',
+		// }
 	},
 	{ timestamps: true }
 )

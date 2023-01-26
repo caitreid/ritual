@@ -25,6 +25,39 @@
         </div>
         {% endif %}
     </article>
+    <hr>
+        {% if loggedIn %}
+            <div class="col-md-6">
+                <form action="/events/{{ project.id }}" method="POST">
+                    <fieldset>
+                        <legend>Add Event</legend>
+                        <label class="form-label">Title: </label>
+                        <input type="text" name="title" class="form-control mb-1">
+                        <label class="form-label">Description: </label>
+                        <input type="text" name="description" class="form-control mb-1">
+                        <label class="form-label">Date: </label>
+                        <input type="date" name="date" class="form-control mb-1">
+                    </fieldset>
+                    <input type="submit" class="btn btn-success" value="add event">
+                </form>
+            </div>
+        {% else %}
+            <div class="col-md-6">
+                <small>If you'd like to create an event, please log in...</small>
+            </div>
+        {% endif %}
+        <hr>
+        {% if project.events.length > 0 %}
+            <div class="container-sm justify-content-center">
+                {% for event in project.events %}
+                    {% render '../event.liquid', event: event, userId: userId, project: project %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <small>No events yet...</small>
+            <br>
+            <br>
+        {% endif %}
     <br>
     <p>Return to <a href="/projects">home</a>.</p>
 </div>

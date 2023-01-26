@@ -22,6 +22,14 @@
                     class="form-control"
                 >
             </div>
+
+            {% if projects.length > 0 %}
+                {% for project in projects %}
+                    <p>{{ project.title }}</p>
+                {% endfor %}
+            {% else %}
+                    <p>No projects</p>
+            {% endif %}
             <!--
             <div class="py-2">
                 <label class="form-label">Project:</label>

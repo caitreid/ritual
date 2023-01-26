@@ -22,6 +22,8 @@ router.use((req, res, next) => {
 // Routes
 
 // index ALL
+// i dont think we'll want to show ALL events/projects from ALL users
+// so this may need to go?
 router.get('/', (req, res) => {
 	Project.find({})
 		.then(projects => {
@@ -36,6 +38,7 @@ router.get('/', (req, res) => {
 })
 
 // index that shows only the user's projects
+// This is the most important one... what are MY projects? and their events
 router.get('/mine', (req, res) => {
     // destructure user info from req.session
     const { username, userId, loggedIn } = req.session
@@ -49,6 +52,7 @@ router.get('/mine', (req, res) => {
 })
 
 // new route -> GET route that renders our page with the form
+// do we need to send userID? the variable is declared but never read
 router.get('/new', (req, res) => {
 	const { username, userId, loggedIn } = req.session
 	res.render('projects/new', { username, loggedIn })
@@ -66,8 +70,6 @@ router.post('/', (req, res) => {
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
-
-			// console.log(req)
 		})
 })
 
@@ -88,6 +90,7 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
 	const projectId = req.params.id
 	// req.body.ready = req.body.ready === 'on' ? true : false
+	// console.log('req.params ', req.params)
 
 	Project.findByIdAndUpdate(projectId, req.body, { new: true })
 		.then(project => {
