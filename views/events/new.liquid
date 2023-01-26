@@ -24,7 +24,7 @@
             </div>
             <div class="py-2">
                 <label class="form-label">Date:</label>
-                <input 
+                <input required
                     id="datePicker"
                     type="date" 
                     name="date" 
@@ -35,10 +35,10 @@
             <div class="py-2">
                 {% if categories.length > 0 %}
                 <label id="category">Categories</label>
-                <select class="form-select" id="category">
+                <select name="category" class="form-select" id="category">
                     <option value="">--Please choose an option--</option>
                     {% for category in categories %}
-                        <option name="category" value="{{ category.title }}">{{ category.title | capitalize }}</option>
+                        <option name="category" value="{{ category.id }}">{{ category.title | capitalize }}</option>
                     {% endfor %}
                 </select>
             {% endif %}
@@ -46,10 +46,10 @@
             <div class="py-2">
                 {% if projects.length > 0 %}
                     <label id="projects">Projects</label>
-                    <select class="form-select" id="projects">
+                    <select name="project" class="form-select" id="projects">
                         <option value="">--Please choose an option--</option>
                         {% for project in projects %}
-                            <option name="category" value="{{ project.title  }}">{{ project.title | capitalize }}</option>
+                            <option name="project" value="{{ project.id }}">{{ project.title | capitalize }}</option>
                         {% endfor %}
                     </select>
                 {% else %}
