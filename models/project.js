@@ -2,9 +2,8 @@
 const mongoose = require('./connection')
 
 // import user model for populate
-// const User = require('./user')
-
-const eventSchema = require('./event')
+const User = require('./user')
+const Event = require('./event')
 
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
@@ -18,7 +17,11 @@ const projectSchema = new Schema(
 			type: Schema.Types.ObjectID,
 			ref: 'User',
 		},
-		events: [eventSchema]
+		// events: [eventSchema]
+		events: [{
+			type: Schema.Types.ObjectID,
+			ref: 'Event'
+		}]
 	},
 	{ timestamps: true }
 )

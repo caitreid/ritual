@@ -1,6 +1,6 @@
 // Import Dependencies
 const express = require('express')
-// const Event = require('../models/event')
+const Event = require('../models/event')
 const Project = require('../models/project')
 const Category = require('../models/category')
 
@@ -169,7 +169,7 @@ router.get('/mine', (req, res) => {
 router.get('/new', (req, res) => {
 	const { username, userId, loggedIn } = req.session
 
-	// res.render('events/new', { username, loggedIn, projects, categories })
+	// res.render('events/new', { username, loggedIn })
 
 	Project.find({})
 		.then(projects => {
@@ -180,6 +180,7 @@ router.get('/new', (req, res) => {
 				})
 				.catch(error => {
 					console.log('req.body', req.body)
+					console.log('req.project ', req.body.project)
 					res.redirect(`error?error=${error}`)
 				})
 		})

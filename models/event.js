@@ -3,10 +3,11 @@ const mongoose = require('./connection')
 
 // import user model for populate
 const User = require('./user')
-// const Project = require('./project')
+const Project = require('./project')
+const Category = require('./category')
 
 // destructure the schema and model constructors from mongoose
-const { Schema } = mongoose
+const { Schema, model } = mongoose
 
 const eventSchema = new Schema(
 	{
@@ -35,9 +36,10 @@ const eventSchema = new Schema(
 )
 
 
-// const Event = model('Event', eventSchema)
+const Event = model('Event', eventSchema)
 
 /////////////////////////////////
 // Export our Model
 /////////////////////////////////
-module.exports = eventSchema
+// module.exports = eventSchema
+module.exports = Event

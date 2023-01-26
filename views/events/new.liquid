@@ -32,28 +32,30 @@
                     class="form-control"
                 >
             </div>
-            {% if categories.length > 0 %}
+            <div class="py-2">
+                {% if categories.length > 0 %}
                 <label id="category">Categories</label>
-                <select id="category">
+                <select class="form-select" id="category">
                     <option value="">--Please choose an option--</option>
                     {% for category in categories %}
                         <option name="category" value="{{ category.title }}">{{ category.title | capitalize }}</option>
                     {% endfor %}
                 </select>
             {% endif %}
-            <br>
-            {% if projects.length > 0 %}
-                <label id="projects">Projects</label>
-                <select id="projects">
-                    <option value="">--Please choose an option--</option>
-                    {% for project in projects %}
-                        <option name="category" value="{{ project.title  }}">{{ project.title | capitalize }}</option>
-                    {% endfor %}
-                </select>
-            {% else %}
-                    <p>No projects</p>
-            {% endif %}
-            <br>
+            </div>
+            <div class="py-2">
+                {% if projects.length > 0 %}
+                    <label id="projects">Projects</label>
+                    <select class="form-select" id="projects">
+                        <option value="">--Please choose an option--</option>
+                        {% for project in projects %}
+                            <option name="category" value="{{ project.title  }}">{{ project.title | capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                {% else %}
+                        <p>No projects</p>
+                {% endif %}
+            </div>
         </fieldset>
         <input type="submit" value="Create New Event" class="btn btn-success">
     </form>
