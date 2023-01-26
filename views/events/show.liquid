@@ -7,8 +7,8 @@
       </h2>
       <p>Date: {{ event.date | date: "%A, %B %d, %Y"  }}</p>
       <p>Description: {{ event.description }}</p>
-      <p>Project: {{ event.project  }}</p>
-
+      <p>Project: {{ event.project.title  }}</p>
+      <p>Category: {{ event.category.title  }}</p>
       {% if event.owner == userId %}
         <div class="btn-group">
 

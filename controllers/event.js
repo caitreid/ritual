@@ -141,6 +141,9 @@ router.use((req, res, next) => {
 // index ALL
 router.get('/', (req, res) => {
 	Event.find({})
+		.populate('project', 'title')
+        .populate('category', 'title')
+
 		.then(events => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
@@ -224,6 +227,7 @@ router.put('/:id', (req, res) => {
 	req.body.ready = req.body.ready === 'on' ? true : false
 
 	Event.findByIdAndUpdate(eventId, req.body, { new: true })
+	
 		.then(event => {
 			res.redirect(`/events/${event.id}`)
 		})
@@ -236,6 +240,9 @@ router.put('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
 	const eventId = req.params.id
 	Event.findById(eventId)
+		.populate('project', 'title')
+        .populate('category', 'title')
+		
 		.then(event => {
             const {username, loggedIn, userId} = req.session
 			res.render('events/show', { event, username, loggedIn, userId })

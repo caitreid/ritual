@@ -9,7 +9,9 @@
                 <h5 class="card-header">Title: {{ event.title }}</h5>
                 <div class="card-body">
                     <p class="card-text">
-                        Description: {{ event.description }}
+                        <p>Description: {{ event.description }}</p>
+                        <p>Project: {{ event.project.title }}</p>
+                        <p>Category: {{ event.category.title }}</p>
                     </p>
                     <a href="/events/{{ event.id }}" class="btn btn-info">
                         View
