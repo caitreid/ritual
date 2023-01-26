@@ -74,18 +74,24 @@ router.delete('/delete/:projectId/:eventId', (req, res) => {
             console.log('this is the event to be deleted: \n', theEvent)
             // then we want to make sure the user is loggedIn, and that they are the author of the event
             if (req.session.loggedIn) {
-                // if they are the author, allow them to delete
-                if (theEvent.author == req.session.userId) {
-                    // we can use another built in method - remove()
-                    theEvent.remove()
+				theEvent.remove()
                     project.save()
                     // res.sendStatus(204) //send 204 no content
                     res.redirect(`/projects/${project.id}`)
-                } else {
-                    // otherwise send a 401 - unauthorized status
-                    // res.sendStatus(401)
-                    res.redirect(`/error?error=You%20Are%20not%20allowed%20to%20delete%20this%20event`)
-                }
+
+
+                // if they are the author, allow them to delete
+                // if (theEvent.author == req.session.userId) {
+                //     // we can use another built in method - remove()
+                //     theEvent.remove()
+                //     project.save()
+                //     // res.sendStatus(204) //send 204 no content
+                //     res.redirect(`/projects/${project.id}`)
+                // } else {
+                //     // otherwise send a 401 - unauthorized status
+                //     // res.sendStatus(401)
+                //     res.redirect(`/error?error=You%20Are%20not%20allowed%20to%20delete%20this%20event`)
+                // }
             } else {
                 // otherwise send a 401 - unauthorized status
                 // res.sendStatus(401)
