@@ -1,21 +1,41 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 
-<div class="container-sm p-5">
-    <form action="/auth/signup" method="POST">
+  <div class="container front p-5">
+    <div class="front__container">
+      {% render '../logo.liquid' %}
+
+      <form action="/auth/signup" method="POST">
         <fieldset>
-            <legend>Sign Up Here</legend>
-            <div class="py-2">
-                <label class="form-label">Username: </label>
-                <input type="text" name="username" placeholder="username" class="form-control" required>
-            </div>
-            <div class="py-2">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" placeholder="enter password" class="form-control" required>
-            </div>
+          <div class="py-2">
+            <label class="form-label">Username</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              class="form-control"
+              required>
+          </div>
+          <div class="py-2">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              class="form-control"
+              required>
+          </div>
         </fieldset>
-        <input type="submit" value="Create Account" class="btn btn-success mt-3">
-    </form>
-</div>
+        <br>
+        <input
+          type="submit"
+          value="Create Account"
+          class="btn btn-dark my-2 p-3">
+      </form>
+      <br><br>
+      <p>Have an account?
+        <a href="./login">Sign in</a>.</p>
+    </div>
+  </div>
 
 {% endblock %}

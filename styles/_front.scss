@@ -1,6 +1,9 @@
 .front {
+    h1 a {
+        text-decoration: none;
+    }
     &__container{
-        background-color: rgb(230, 198, 203);
+        background-color: rgb(174, 223, 230);
         padding: 4rem;
         max-width: 500px;
         width: 100%;
@@ -16,10 +19,13 @@
     &__signup-signin{
         display: flex;
         flex-direction: column;
+    }
 
-        .btn {
-            margin: .5rem 0;
-            padding: 1rem;
-        }
+    .btn {
+        margin: .5rem 0;
+        width: 100%;
+    }
+    input[type=text], input[type=password]{
+        height:3.25rem;
     }
 }

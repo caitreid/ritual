@@ -4,16 +4,16 @@
     <div class="container front p-5">
         <div class="front__container">
             <div class="front__title-container">
-                <h1>Ritual</h1>
-                <b>Make Art Every Day.</b>
-                <br>
-                <br>
-                <p>Following Julia Cameron's <i><a href="https://www.worldcat.org/title/artists-way-a-spiritual-path-to-higher-creativity/oclc/611985564">The Artist's Way</a></i>, Ritual accompanies your spiritual journey to higher creativity. That begins with cultivating a continuous practice.</p>
+                {% render './logo.liquid' %}
+
+                <p>Inspired by Julia Cameron's <i><a href="https://www.worldcat.org/title/artists-way-a-spiritual-path-to-higher-creativity/oclc/611985564">The Artist's Way</a></i>, Ritual accompanies your spiritual journey to higher creativity. It begins with cultivating a continuous practice.</p>
             </div>
             <br>
+            <p>Let's get started.</p>
             <div class="front__signup-signin">
-                <button type="button" class="btn btn-light">Create Account</button>
-                <button type="button" class="btn btn-dark">Sign In</button>
+                <a href="/auth/signup"><button type="button" class="btn btn-light my-2 p-3">Create Account</button></a>
+                
+                <a href="/auth/login"><button type="button" class="btn btn-dark my-2 p-3">Sign In</button></a>
             </div>
         </div>
         
