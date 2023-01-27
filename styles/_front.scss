@@ -1,13 +1,19 @@
+@use 'breakpoints';
+
 .front {
     h1 a {
         text-decoration: none;
     }
     &__container{
         background-color: rgb(174, 223, 230);
-        padding: 4rem;
+        padding: 2rem;
         max-width: 500px;
         width: 100%;
         border-radius: 25px;
+
+        @media (min-width: $mobile-breakpoint) {
+            padding:4rem;
+        }
     }
 
     display: flex;

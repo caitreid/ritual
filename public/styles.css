@@ -24,6 +24,10 @@ input {
   color: white;
 }
 
+.logo {
+  padding: 1rem 0;
+}
+
 .front {
   display: flex;
   align-items: center;
@@ -36,10 +40,15 @@ input {
 }
 .front__container {
   background-color: rgb(174, 223, 230);
-  padding: 4rem;
+  padding: 2rem;
   max-width: 500px;
   width: 100%;
   border-radius: 25px;
+}
+@media (min-width: 500px) {
+  .front__container {
+    padding: 4rem;
+  }
 }
 .front__signup-signin {
   display: flex;
