@@ -1,0 +1,25 @@
+.front {
+    &__container{
+        background-color: rgb(230, 198, 203);
+        padding: 4rem;
+        max-width: 500px;
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+
+    &__signup-signin{
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+            margin: .5rem 0;
+            padding: 1rem;
+        }
+    }
+}
