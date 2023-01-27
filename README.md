@@ -89,3 +89,8 @@ User will be able to
 | /projects/:id/edit | GET          | edit       
 | /projects/:id      | PATCH/PUT    | update    
 | /projects/:id      | DELETE       | destroy  
+
+
+# Scripts
+## SASS compiling
+`sass --watch styles/main.scss public/styles.css`
