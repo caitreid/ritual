@@ -16,7 +16,10 @@ small, label {
 
 input {
     border: none !important;
-    // height: 2.5rem;
+}
+
+a[href].btn  {
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -27,4 +30,7 @@ input {
 
 .logo {
     padding: 1rem 0;
+    h1 a[href] {
+        text-decoration: none;
+    }
 }

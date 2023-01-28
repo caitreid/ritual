@@ -1,37 +1,33 @@
 @use 'breakpoints';
+@use 'cards';
 
 .front {
-    h1 a {
-        text-decoration: none;
-    }
-    &__container{
-        background-color: rgb(174, 223, 230);
-        padding: 2rem;
-        max-width: 500px;
-        width: 100%;
-        border-radius: 25px;
-
-        @media (min-width: $mobile-breakpoint) {
-            padding:4rem;
-        }
-    }
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
-
-    &__signup-signin{
-        display: flex;
-        flex-direction: column;
-    }
-
+    height:100vh;
+}
+.card__signup-signin{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     .btn {
         margin: .5rem 0;
         width: 100%;
     }
-    input[type=text], input[type=password]{
-        height:3.25rem;
+}
+.card__container{
+    @include card;
+
+    @media (min-width: $mobile-breakpoint) {
+        padding:4rem;
     }
 }
+
+
+input[type=text], input[type=password]{
+    height:3.25rem;
+}
+    
+

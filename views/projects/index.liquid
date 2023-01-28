@@ -1,6 +1,7 @@
 {% layout 'layout.liquid'%}
 {% block content %}
-<div class="container p-5">
+<div class="container-fluid p-5">
+    {% render '../logo.liquid' %}
     <h2 class="display-6">All Projects</h2>
     <div class="row">
         {% if projects.length > 0 %}
@@ -16,7 +17,7 @@
                         <b>Description: </b>
                         <p>{{ project.description }}</p>
                     {% endif %}
-                    {% if project.events %}
+                    {% if project.events.length > 0 %}
                         <b>Description: </b>
                         {% for event in events %}
                             <li> {{ event }} </li>
