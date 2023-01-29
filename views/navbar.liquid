@@ -1,7 +1,7 @@
 {% block content %}
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
-      <a href="/" class="navbar-brand">Ritual</a>
+      <a href="/" class="navbar-brand text-light">Ritual</a>
       {% if loggedIn %}
         <a href="/projects/mine" class="nav-link text-light">Hello {{ username }}
         </a>
@@ -21,13 +21,13 @@
           <a href="/projects" class="nav-link text-light px-2">View All Projects</a>
           <a href="/projects/new" class="nav-link text-light px-2">New Project</a>
           <a href="/projects/mine" class="nav-link text-light px-2">My Projects</a>
-          <!-- 
-          <p class="text-light px-2">|||||||</p>
+          
+          <p class="text-light px-2">/</p>
           <a href="/events" class="nav-link text-light px-2">View All events</a>
           <a href="/events/new" class="nav-link text-light px-2">New event</a>
           <a href="/events/mine" class="nav-link text-light px-2">My events</a>
           <a href="/auth/logout" class="nav-link text-light px-2">Log Out</a>
-          -->
+          
         {% else %}
           <a href="/auth/signup" class="nav-link text-light px-2">Sign Up</a>
           <a href="/auth/login" class="nav-link text-light px-2">Sign In</a>

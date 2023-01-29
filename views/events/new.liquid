@@ -1,7 +1,8 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-fluid p-5">
-    {% render '../logo.liquid' %}
+<div class="container-fluid p-5 front">
+    <div class="card__container">
+        {% render '../logo.liquid' %}
     <form action="/events" method="POST">
         <fieldset>
             <legend>Create New event</legend>
@@ -60,5 +61,6 @@
         </fieldset>
         <input type="submit" value="Create New Event" class="btn btn-success">
     </form>
+    </div>
 </div>
 {% endblock %}

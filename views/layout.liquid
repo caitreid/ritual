@@ -13,7 +13,7 @@
 
 <body>
     <header>
-    {% comment %} {% render './navbar.liquid', loggedIn: loggedIn, username: username, userId: userId %}{% endcomment %} 
+    {% render './navbar.liquid', loggedIn: loggedIn, username: username, userId: userId %}
     </header>
     <main>
         {% block content %} 
