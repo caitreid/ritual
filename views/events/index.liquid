@@ -1,27 +1,36 @@
 {% layout 'layout.liquid'%}
 {% block content %}
-<div class="container p-5">
-    <h2 class="display-6">All Events</h2>
+<div class="container-fluid p-5">
+    {% render '../logo.liquid' %}
     <div class="row">
-        {% if events.length > 0 %}
-            {% for event in events %}
-            <div class="card" style="width: 18rem;">
-                <h5 class="card-header">Title: {{ event.title }}</h5>
-                <div class="card-body">
-                    <p class="card-text">
-                        <p>Description: {{ event.description }}</p>
-                        <p>Project: {{ event.project.title }}</p>
-                        <p>Category: {{ event.category.title }}</p>
-                    </p>
-                    <a href="/events/{{ event.id }}" class="btn btn-info">
-                        View
-                    </a>
+        <div class="col-md-3 col-sm-12">
+            <h2 class="display-6">All Events</h2>
+        </div>
+        
+        <div class="col-md-9 col-sm-12">
+            <div class="row">
+            {% if events.length > 0 %}
+                {% for event in events %}
+                <div class="card m-2" style="width: 30%;">
+                    <h5 class="card-header">Title: {{ event.title }}</h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <p>Description: {{ event.description }}</p>
+                            <p>Project: {{ event.project.title }}</p>
+                            <p>Category: {{ event.category.title }}</p>
+                        </p>
+                        <a href="/events/{{ event.id }}" class="btn btn-info">
+                            View
+                        </a>
+                    </div>
                 </div>
+                {% endfor %}
+            {% else %}
+                <p>Create a new <a href="/event/new">event</a>.</p>
+            {% endif %}
             </div>
-            {% endfor %}
-        {% else %}
-            <p>Create a new <a href="/event/new">event</a>.</p>
-    {% endif %}
+        </div>
     </div>
+
 </div>
 {% endblock %}

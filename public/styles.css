@@ -45,6 +45,7 @@ a[href].btn {
 }
 .card-header {
   background-color: transparent;
+  border: 0px;
 }
 
 .card {
@@ -58,6 +59,7 @@ a[href].btn {
 
 .card-header {
   background-color: transparent;
+  border: 0px;
 }
 
 .front {
