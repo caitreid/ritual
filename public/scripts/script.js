@@ -18,13 +18,18 @@ create.addEventListener('click', () => {
     modal.classList.add('show')
 })
 
-let body = document.querySelector('body')
+// let body = document.querySelector('body')
 
-body.addEventListener('click', (event) => {
 
-    if((event.target).closest('.container-fluid') && (modal.classList.contains('show')) ) {
+document.addEventListener('click', function handleClick(event) {
+    const hasClass = event.target.classList.contains('container-fluid');
+    console.log(hasClass);
+  
+    if (hasClass) {
+        console.log('Event.target has the specified class');
         console.log('outside')
         modal.classList.remove('show')
         modal.classList.add('hide')
-    } 
-})
+    }
+    
+  });
