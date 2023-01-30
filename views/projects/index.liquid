@@ -1,40 +1,48 @@
-{% layout 'layout.liquid'%}
+{% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-fluid p-5">
+  <div class="container-fluid projects">
     {% render '../logo.liquid' %}
-    <h2 class="display-6">All Projects</h2>
-    <p>Here are all the projects you've created to date.</p>
-    <div class="row">
-        {% if projects.length > 0 %}
-            {% for project in projects %}
-            <div class="card card__projects m-2" style="width: 18rem;">
-                <h5 class="card-header">{{ project.title }}</h5>
-                <div class="card-body">
-                    {% if project.due %}
-                        <b>Due: </b>
-                        <p>{{ project.due | date: "%A, %B %d, %Y" }} </p>
-                    {% endif %}
-                    {% if project.description %}
-                        <b>Description: </b>
-                        <p>{{ project.description }}</p>
-                    {% endif %}
-                    {% if project.events.length > 0 %}
-                        <b>Description: </b>
-                        {% for event in events %}
-                            <li> {{ event }} </li>
-                        {% endfor %}
-                    {% endif %}
-
-                    <a href="/projects/{{ project.id }}" class="btn btn-info">
-                        View
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-        {% else %}
-        <p>Create a new <a href="/projects/new">project</a>.</p>
-        {% endif %}
+    <div class="projects__title">
+        <h2 class="display-6">All Projects</h2>
+        <p>Here are all the projects you've created to date.</p>
     </div>
-</div>
-{% endblock %}
+    <div class="row">
+      {% if projects.length > 0 %}
+        {% for project in projects %}
+          <div class="card card__projects m-2">
+            <h3 class="card-header">{{ project.title }}</h5>
+            <div class="card-body">
+              {% if project.due %}
+                <b>Due:
+                </b>
+                <p>{{ project.due | date: "%A, %B %d, %Y" }}
+                </p>
+              {% endif %}
+              {% if project.description %}
+                <b>Description:
+                </b>
+                <p>{{ project.description }}</p>
+              {% endif %}
+              {% if project.events.length > 0 %}
+                <b>Description:
+                </b>
+                {% for event in events %}
+                  <li>
+                    {{ event }}
+                  </li>
+                {% endfor %}
+              {% endif %}
 
+              <a href="/projects/{{ project.id }}" class="btn btn-info">
+                View
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>Create a new
+          <a href="/projects/new">project</a>.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

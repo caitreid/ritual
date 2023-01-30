@@ -1,6 +1,6 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-fluid p-5">
+<div class="container-fluid projects">
     {% render '../logo.liquid' %}
     <article>
         <h2>
@@ -13,6 +13,7 @@
             <p>No Due Date Assigned.</p>
         {% endif %}
         {% if project.description %}
+        
             <p><b>Description:</b> {{ project.description }}</p>
         {% endif %}
 
@@ -63,6 +64,6 @@
         {% endif %}
         {% endcomment %}
     <br>
-    <p>Return to <a href="/projects">home</a>.</p>
+    <p>Return to <a href="/projects">all projects</a>.</p>
 </div>
 {% endblock %}
