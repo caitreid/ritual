@@ -1,8 +1,7 @@
-{% layout 'layout.liquid' %}
+{% comment %} {% layout 'layout.liquid' %} {% endcomment %}
 {% block content %}
 <div class="container-fluid p-5 front">
-    <div class="card__container">
-        {% render '../logo.liquid' %}
+    <div class="card__container modal__create">
     <form action="/events" method="POST">
         <fieldset>
             <legend>Create New event</legend>

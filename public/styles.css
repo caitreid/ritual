@@ -36,6 +36,55 @@ a[href].btn {
   padding: 1rem 0;
 }
 
+.modal__create {
+  display: none;
+  opacity: 0;
+}
+.modal__create.show {
+  display: block;
+  opacity: 1;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+.modal__create.hide {
+  display: none;
+  opacity: 0;
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .card {
   background-color: rgb(174, 223, 230);
   padding: 2rem;
@@ -68,7 +117,7 @@ a[href].btn {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 5rem);
 }
 
 .card__signup-signin {
