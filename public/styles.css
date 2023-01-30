@@ -1,5 +1,5 @@
-body {
-  background-color: rgba(214, 255, 255, 0.616);
+h1 a[href] {
+  text-decoration: none;
 }
 
 a[href] {
@@ -28,11 +28,12 @@ a[href].btn {
   color: white;
 }
 
+.btn-light {
+  background-color: white;
+}
+
 .logo {
   padding: 1rem 0;
-}
-.logo h1 a[href] {
-  text-decoration: none;
 }
 
 .card {
@@ -95,6 +96,15 @@ a[href].btn {
 
 input[type=text], input[type=password] {
   height: 3.25rem;
+}
+
+.nav {
+  padding: 1rem;
+  border-bottom: 1px grey solid;
+}
+.nav h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
