@@ -1,12 +1,5 @@
-// .card {
-//     // background-color: transparent;
-//     background-color: rgba(255, 255, 255, 0.481);
-//     .card-header {
-//         background-color: transparent;
-//         padding: 1rem;
-//         border: 0px;
-//     }
-// }
+
+@use 'breakpoints';
 
 @mixin card {
     background-color: rgb(174, 223, 230);
@@ -24,4 +17,44 @@
         background-color: transparent;
         border: 0px;
     }
+}
+
+.modal__card {
+    display: none;
+    opacity: 0;
+    z-index: 100;
+    &.show {
+        display: block;
+        opacity: 1;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+    &.hide {
+        display: none;
+        opacity: 0;
+        -webkit-animation: fadeOut 1s;
+        animation: fadeOut 1s;
+    }
+    // @media (max-width: $mobile-breakpoint) {
+    //     height: 100vh;
+    // }
+}
+
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
 }

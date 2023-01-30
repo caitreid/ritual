@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
 document.getElementById('datePicker').valueAsDate = new Date();
 
 let create = document.querySelector('.create')
-let modal = document.querySelector('.modal__create')
+let modal = document.querySelector('.modal__card')
 
 create.addEventListener('click', () => {
     console.log('create')

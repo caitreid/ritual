@@ -36,17 +36,31 @@ a[href].btn {
   padding: 1rem 0;
 }
 
-.modal__create {
+.card {
+  background-color: rgb(174, 223, 230);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 25px;
+  border: 0px;
+}
+.card-header {
+  background-color: transparent;
+  border: 0px;
+}
+
+.modal__card {
   display: none;
   opacity: 0;
+  z-index: 100;
 }
-.modal__create.show {
+.modal__card.show {
   display: block;
   opacity: 1;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
-.modal__create.hide {
+.modal__card.hide {
   display: none;
   opacity: 0;
   -webkit-animation: fadeOut 1s;
@@ -93,25 +107,64 @@ a[href].btn {
   border-radius: 25px;
   border: 0px;
 }
-.card-header {
-  background-color: transparent;
-  border: 0px;
-}
-
-.card {
-  background-color: rgb(174, 223, 230);
-  padding: 2rem;
-  max-width: 500px;
-  width: 100%;
-  border-radius: 25px;
-  border: 0px;
-}
 
 .card-header {
   background-color: transparent;
   border: 0px;
 }
 
+.modal__card {
+  display: none;
+  opacity: 0;
+  z-index: 100;
+}
+
+.modal__card.show {
+  display: block;
+  opacity: 1;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.modal__card.hide {
+  display: none;
+  opacity: 0;
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .front {
   display: flex;
   align-items: center;
