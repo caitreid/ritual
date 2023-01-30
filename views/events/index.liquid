@@ -1,6 +1,6 @@
 {% layout 'layout.liquid'%}
 {% block content %}
-<div class="container-fluid p-5">
+<div class="container-fluid events">
     {% render '../logo.liquid' %}
     <div class="row">
         <div class="col-md-3 col-sm-12">
@@ -11,13 +11,17 @@
             <div class="row">
             {% if events.length > 0 %}
                 {% for event in events %}
-                <div class="card m-2" style="width: 30%;">
-                    <h5 class="card-header">Title: {{ event.title }}</h5>
+                <div class="card m-2">
+                    <h3 class="card-header">{{ event.title | capitalize }}</h3>
                     <div class="card-body">
                         <p class="card-text">
-                            <p>Description: {{ event.description }}</p>
-                            <p>Project: {{ event.project.title }}</p>
-                            <p>Category: {{ event.category.title }}</p>
+                            <p><b>Description:</b> {{ event.description }}</p>
+                            {% if event.project %}
+                                <p><b>Project:</b> {{ event.project.title }}</p>
+                            {% endif %}
+                            {% if event.category %}
+                                <p><b>Category:</b> {{ event.category.title }}</p>
+                            {% endif %}
                         </p>
                         <a href="/events/{{ event.id }}" class="btn btn-info">
                             View

@@ -162,7 +162,7 @@ router.get('/mine', (req, res) => {
     const { username, userId, loggedIn } = req.session
 	Event.find({ owner: userId })
 		.then(events => {
-			res.render('events/index', { events, username, loggedIn })
+			res.render('events/index', { events, username, loggedIn, categories, projects })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)

@@ -1,6 +1,6 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-fluid p-5">
+<div class="container-fluid events">
     {% render '../logo.liquid' %}
     <form action="/events/{{event.id}}?_method=PUT" method="POST">
         <fieldset>
@@ -27,7 +27,7 @@
             </div>
         </fieldset>
         <br>
-        <input type="submit" value="Save Event" class="btn btn-success">
+        <input type="submit" value="Save Event" class="btn btn-success my-2">
     </form>
     <br><br>
     <p>Return to <a href="/projects">home</a>.</p>
