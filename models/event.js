@@ -17,20 +17,15 @@ const eventSchema = new Schema(
 		category: {
 			type: Schema.Types.ObjectID,
 			ref: 'Category'
-		},
+		}, // eventually set to an array to have more than one category
 		project: {
 			type: Schema.Types.ObjectID,
 			ref: 'Project'
 		},
-		// category: { type: Array, required: true }
-		// project: {
-		// 	type: Schema.Types.ObjectID,
-		// 	ref: 'Project'
-		// },
-		// owner: {
-		// 	type: Schema.Types.ObjectID,
-		// 	ref: 'User',
-		// }
+		owner: {
+			type: Schema.Types.ObjectID,
+			ref: 'User',
+		}
 	},
 	{ timestamps: true }
 )
