@@ -1,0 +1,26 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-fluid p-5">
+    {% render '../logo.liquid' %}
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <h2 class="display-6">All Categories</h2>
+        </div>
+        
+        <div class="col-md-9 col-sm-12">
+            <div class="row">
+            {% if categories.length > 0 %}
+                {% for category in categories %}
+                <div class="card m-2" style="width: 30%;">
+                    <h5 class="card-header">{{ category.title }}</h5>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- <p>Create a new <a href="/event/new">event</a>.</p> -->
+            {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

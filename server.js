@@ -7,6 +7,7 @@ const middleware = require('./utils/middleware')
 const ProjectRouter = require('./controllers/project')
 const EventRouter = require('./controllers/event')
 const UserRouter = require('./controllers/user')
+const CategoryRouter = require('./controllers/categories')
 const User = require("./models/user")
 // SEE MORE DEPENDENCIES IN ./utils/middleware.js
 // user and resource routes linked in ./utils/middleware.js
@@ -25,6 +26,7 @@ middleware(app)
 app.use('/auth', UserRouter)
 app.use('/projects', ProjectRouter)
 app.use('/events', EventRouter)
+app.use('/categories', CategoryRouter)
 
 app.get('/', (req, res) => {
     const { username, userId, loggedIn } = req.session
