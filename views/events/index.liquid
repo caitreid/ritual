@@ -15,7 +15,12 @@
                     <h3 class="card-header">{{ event.title | capitalize }}</h3>
                     <div class="card-body">
                         <p class="card-text">
-                            <p><b>Description:</b> {{ event.description }}</p>
+                            {% if event.date %}
+                                <p><b>Date:</b> {{ event.date | date: "%A, %B %d, %Y" }}</p>
+                            {% endif %}
+                            {% if event.description %}
+                                <p><b>Description:</b> {{ event.description }}</p>
+                            {% endif %}
                             {% if event.project %}
                                 <p><b>Project:</b> {{ event.project.title }}</p>
                             {% endif %}
