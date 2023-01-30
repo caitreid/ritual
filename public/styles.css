@@ -105,8 +105,11 @@ input[type=text], input[type=password] {
   justify-content: space-between;
 }
 .nav h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 0;
+}
+.nav h1 a[href] {
+  color: rgb(44, 44, 44);
 }
 .nav__menu {
   display: flex;
@@ -123,14 +126,49 @@ input[type=text], input[type=password] {
   flex-direction: row;
   align-items: center;
 }
-.nav__logo svg {
-  margin-right: 1rem;
+.nav__logo .btn {
+  padding: 0;
+}
+.nav__logo .btn:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+}
+.nav__logo .btn svg {
+  width: 1.5rem;
+}
+.nav__logo h1 {
+  margin-left: 1rem;
+}
+
+.offcanvas {
+  padding: 1rem;
+}
+
+.create {
+  border: 1px solid grey;
+  border-radius: 40px;
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.create:hover {
+  cursor: pointer;
 }
 
 select {
   -webkit-appearance: none;
   appearance: none;
   padding: 0.5rem 2.5rem 0.5rem 1rem;
+}
+select:hover {
+  cursor: pointer;
 }
 
 .select-wrapper {

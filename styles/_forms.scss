@@ -3,6 +3,10 @@ select {
     -webkit-appearance: none;
     appearance: none;
     padding: .5rem 2.5rem .5rem 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .select-wrapper {
