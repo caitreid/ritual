@@ -4,3 +4,5 @@
 //     document.getElementById('datePicker').valueAsDate = new Date();
 //   });
 // alert('hello!')
+
+$('.dropdown-toggle').dropdown()

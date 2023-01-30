@@ -101,10 +101,48 @@ input[type=text], input[type=password] {
 .nav {
   padding: 1rem;
   border-bottom: 1px grey solid;
+  display: flex;
+  justify-content: space-between;
 }
 .nav h1 {
   font-size: 2rem;
   margin-bottom: 0;
+}
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav__menu::after {
+  content: url("../images/list.svg");
+  width: 2rem;
+  margin-right: 1rem;
+}
+.nav__logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav__logo svg {
+  margin-right: 1rem;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+}
+
+.select-wrapper {
+  position: relative;
+  padding-left: 1rem;
+}
+.select-wrapper::after {
+  content: url("../images/chevron-down.svg");
+  font-size: 0.6rem;
+  top: 0.85rem;
+  right: 1rem;
+  position: absolute;
 }
 
 /*# sourceMappingURL=styles.css.map */

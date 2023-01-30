@@ -1,9 +1,32 @@
 .nav {
     padding:1rem;
     border-bottom: 1px grey solid;
+    display: flex;
+    justify-content: space-between;
     
     h1 {
         font-size: 2rem;
         margin-bottom: 0;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+            content: url('../images/list.svg');
+            width: 2rem;
+            margin-right: 1rem;
+        }
+    }
+    &__logo {
+        display: flex;
+        flex-direction: row;  
+        align-items: center;  
+
+        svg {
+            margin-right: 1rem;
+        }
     }
 }

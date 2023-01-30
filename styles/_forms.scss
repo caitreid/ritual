@@ -1,0 +1,19 @@
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: .5rem 2.5rem .5rem 1rem;
+}
+
+.select-wrapper {
+    position: relative;
+    padding-left: 1rem;
+
+    &::after {
+        content: url("../images/chevron-down.svg");
+        font-size: .6rem;
+        top: .85rem;
+        right: 1rem;
+        position: absolute;
+    }
+}
