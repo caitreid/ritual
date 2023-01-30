@@ -130,6 +130,7 @@ router.use((req, res, next) => {
 	if (req.session.loggedIn) {
 		// if they're logged in, go to the next thing(thats the controller)
 		next()
+
 	} else {
 		// if they're not logged in, send them to the login page
 		res.redirect('/auth/login')
@@ -138,7 +139,7 @@ router.use((req, res, next) => {
 
 // Routes
 
-// index ALL
+// index ALL events
 router.get('/', (req, res) => {
 	Event.find({})
 		.populate('project', 'title')
