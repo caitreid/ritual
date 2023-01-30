@@ -114,13 +114,101 @@ db.on('open', () => {
 
     const startEvents = [
         {   
-         title: 'title',
+         title: 'Writing at the public library',
 		    description: 'Here is the description',
 		    date: '2023-01-26T00:00:00.000Z',
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Studio visit',
+            description: 'Sunday the folks from crit club came over to discuss everyones work',
+            date: '2023-01-22T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Researching sources',
+            description: 'Went to NYPL to find new sources of info for project',
+            date: '2023-01-18T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Editing',
+            description: 'Starting reviewing past projects begun in 2022',
+            date: '2023-01-18T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Writing at the public library',
+            description: 'Here is the description',
+            date: '2023-01-12T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Studio visit',
+            description: 'Sunday the folks from crit club came over to discuss everyones work',
+            date: '2023-01-08T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Researching sources',
+            description: 'Went to NYPL to find new sources of info for project',
+            date: '2023-01-07T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Editing',
+            description: 'Starting reviewing past projects',
+            date: '2022-12-31T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },        {   
+            title: 'Writing at the public library',
+            description: 'Here is the description',
+            date: '2022-12-30T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Studio visit',
+            description: 'Sunday the folks from crit club came over to discuss everyones work',
+            date: '2023-01-05T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Researching sources',
+            description: 'Went to NYPL to find new sources of info for project',
+            date: '2023-01-03T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
+        },
+        {   
+            title: 'Editing',
+            description: 'Starting reviewing past projects begun in 2022',
+            date: '2023-01-02T00:00:00.000Z',
+            category: '63d81c89879c235c358ebd46', // Project Planning
+            project: '63d81c89879c235c358ebd41', // New arts portfolio website
+            owner: "63d007f2cfa536211c32c6ca", // caitreid
         }
+
     ]
 
     Event.deleteMany()
