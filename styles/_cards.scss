@@ -17,6 +17,7 @@
 .card {
     @include card;
     border: 0px;
+
     &-header {
         background-color: transparent;
         border: 0px;
@@ -25,13 +26,14 @@
     //     position: absolute;
     //     bottom: 2rem;
     // }
-    min-height: 20rem;
+    // min-height: 20rem;
 }
 
 .modal__card {
     display: none;
     opacity: 0;
     z-index: 100;
+
     &.show {
         display: block;
         opacity: 1;

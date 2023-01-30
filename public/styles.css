@@ -64,7 +64,6 @@ a[href].btn {
   width: 100%;
   border-radius: 25px;
   border: 0px;
-  min-height: 20rem;
 }
 .card-header {
   background-color: transparent;
@@ -131,7 +130,6 @@ a[href].btn {
   width: 100%;
   border-radius: 25px;
   border: 0px;
-  min-height: 20rem;
 }
 
 .card-header {
@@ -328,7 +326,6 @@ select:hover {
   width: 98%;
   background-color: transparent;
   border: 1px solid grey;
-  height: 25rem;
 }
 @media (min-width: 600px) and (max-width: 860px) {
   .projects .card {
@@ -350,6 +347,13 @@ select:hover {
 .events .card .btn {
   background-color: rgb(249, 137, 87);
   border-color: rgb(249, 137, 87);
+}
+
+.categories {
+  padding: 2rem;
+}
+.categories .card {
+  height: 10rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
