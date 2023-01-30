@@ -14,14 +14,15 @@ small, label {
   line-height: 0.8rem;
 }
 
-input {
-  border: none !important;
-}
-
 a[href].btn {
   text-decoration: none;
 }
 
+.btn, .create {
+  transition: background-color 0.5s ease;
+}
+
+.create:hover,
 .btn:hover {
   border-color: transparent;
   background-color: rgba(5, 139, 163, 0.919);
@@ -36,6 +37,26 @@ a[href].btn {
   padding: 1rem 0;
 }
 
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.btn-primary {
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card__container input {
+  border: none !important;
+}
+
 .card {
   background-color: rgb(174, 223, 230);
   padding: 2rem;
@@ -43,6 +64,7 @@ a[href].btn {
   width: 100%;
   border-radius: 25px;
   border: 0px;
+  min-height: 20rem;
 }
 .card-header {
   background-color: transparent;
@@ -66,7 +88,6 @@ a[href].btn {
   -webkit-animation: fadeOut 1s;
   animation: fadeOut 1s;
 }
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -99,6 +120,10 @@ a[href].btn {
     opacity: 0;
   }
 }
+.card__container input {
+  border: none !important;
+}
+
 .card {
   background-color: rgb(174, 223, 230);
   padding: 2rem;
@@ -106,6 +131,7 @@ a[href].btn {
   width: 100%;
   border-radius: 25px;
   border: 0px;
+  min-height: 20rem;
 }
 
 .card-header {
@@ -264,6 +290,10 @@ input[type=text], input[type=password] {
   cursor: pointer;
 }
 
+form {
+  max-width: 500px;
+}
+
 select {
   -webkit-appearance: none;
   appearance: none;
@@ -283,6 +313,43 @@ select:hover {
   top: 0.85rem;
   right: 1rem;
   position: absolute;
+}
+
+.projects {
+  padding: 2rem;
+}
+.projects h2 {
+  font-size: 1.75rem;
+}
+.projects__title {
+  padding: 2rem 0;
+}
+.projects .card {
+  width: 98%;
+  background-color: transparent;
+  border: 1px solid grey;
+  height: 25rem;
+}
+@media (min-width: 600px) and (max-width: 860px) {
+  .projects .card {
+    width: 45%;
+  }
+}
+@media (min-width: 860px) {
+  .projects .card {
+    width: 30%;
+  }
+}
+
+.events {
+  padding: 2rem;
+}
+.events .card {
+  background-color: rgb(255, 237, 229);
+}
+.events .card .btn {
+  background-color: rgb(249, 137, 87);
+  border-color: rgb(249, 137, 87);
 }
 
 /*# sourceMappingURL=styles.css.map */
