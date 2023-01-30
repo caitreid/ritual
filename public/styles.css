@@ -343,6 +343,12 @@ select:hover {
 }
 .events .card {
   background-color: rgb(255, 237, 229);
+  width: 98%;
+}
+@media (min-width: 460px) {
+  .events .card {
+    width: 45%;
+  }
 }
 .events .card .btn {
   background-color: rgb(249, 137, 87);
@@ -353,7 +359,7 @@ select:hover {
   padding: 2rem;
 }
 .categories .card {
-  height: 10rem;
+  height: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
