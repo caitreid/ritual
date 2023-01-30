@@ -9,6 +9,10 @@
     border-radius: 25px;
 }
 
+.card__container input {
+    border: none !important;
+}
+
 // overwrite bootstrap defaults
 .card {
     @include card;
@@ -17,6 +21,11 @@
         background-color: transparent;
         border: 0px;
     }
+    // &-body .btn {
+    //     position: absolute;
+    //     bottom: 2rem;
+    // }
+    min-height: 20rem;
 }
 
 .modal__card {
@@ -35,9 +44,9 @@
         -webkit-animation: fadeOut 1s;
         animation: fadeOut 1s;
     }
-    // @media (max-width: $mobile-breakpoint) {
-    //     height: 100vh;
-    // }
+    @media screen and (max-width: 500px) {
+        // height: 100vh;
+    }
 }
 
 

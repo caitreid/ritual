@@ -1,0 +1,28 @@
+.projects {
+    padding: 2rem;
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    &__title {
+        padding: 2rem 0;
+        
+    }
+
+    .card {
+        width:98%;
+        background-color: transparent;
+        border: 1px solid grey;
+        height: 25rem;
+
+        @media (min-width: 600px) and (max-width: 860px) {
+            width: 45%;
+        }
+
+        @media (min-width: 860px) {
+            width: 30%;
+        }
+
+    }
+}

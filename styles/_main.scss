@@ -1,3 +1,5 @@
+// @use 'variables';
+
 h1 a[href] {
     text-decoration: none;
 }
@@ -14,18 +16,21 @@ small, label {
     line-height: .8rem;
 }
 
-input {
-    border: none !important;
-}
+
 
 a[href].btn  {
     text-decoration: none;
 }
 
+.btn, .create {
+    transition: background-color 0.5s ease;
+}
+.create:hover,
 .btn:hover {
     border-color: transparent;
     background-color: rgba(5, 139, 163, 0.919);
     color:white;
+    
 }
 .btn-light {
     background-color: white;
@@ -35,5 +40,18 @@ a[href].btn  {
     padding: 1rem 0;
     
 }
+.btn {
+    padding: .5rem 1rem;
+    border-radius:20px
+}
+.btn-primary {
+    background-color: transparent;
+    // margin-right: 1rem;
+    padding: .5rem 1rem;
+    border-radius:20px
+}
 
-
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px;
+}
