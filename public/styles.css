@@ -38,7 +38,7 @@ input {
 .front h1 a {
   text-decoration: none;
 }
-.card___container {
+.front__container {
   background-color: rgb(174, 223, 230);
   padding: 2rem;
   max-width: 500px;
@@ -46,11 +46,11 @@ input {
   border-radius: 25px;
 }
 @media (min-width: 500px) {
-  .card___container {
+  .front__container {
     padding: 4rem;
   }
 }
-.card___signup-signin {
+.front__signup-signin {
   display: flex;
   flex-direction: column;
 }
