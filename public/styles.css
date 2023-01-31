@@ -53,6 +53,11 @@ a[href].btn {
   border-bottom-right-radius: 20px;
 }
 
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
 .card__container input {
   border: none !important;
 }
@@ -272,12 +277,13 @@ input[type=text], input[type=password] {
 }
 
 .create {
+  background-color: rgba(117, 195, 111, 0.8470588235);
+  position: fixed;
   border: 1px solid grey;
   border-radius: 40px;
   padding: 1rem;
   width: 4rem;
   height: 4rem;
-  position: absolute;
   bottom: 2rem;
   right: 2rem;
   display: flex;
@@ -286,6 +292,7 @@ input[type=text], input[type=password] {
 }
 .create:hover {
   cursor: pointer;
+  background-color: #1c9616;
 }
 
 form {
@@ -350,6 +357,11 @@ select:hover {
     width: 45%;
   }
 }
+.events .card .star {
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+}
 .events .card .btn {
   background-color: rgb(249, 137, 87);
   border-color: rgb(249, 137, 87);
@@ -360,6 +372,29 @@ select:hover {
 }
 .categories .card {
   height: 100%;
+}
+
+.calendar .week__rail {
+  border-bottom: 1px grey solid;
+}
+.calendar .week__rail .week__date-range {
+  padding: 1rem 2rem;
+  border-bottom: 1px #d0d0d0 solid;
+}
+.calendar .week__rail .week__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar .week__rail .week__days .day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.star {
+  fill: orange;
+  width: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

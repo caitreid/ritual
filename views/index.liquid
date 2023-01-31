@@ -1,32 +1,33 @@
 {% layout "layout.liquid" %}
 {% block content %}
-{% render './navigation.liquid' %}
+  {% render './navigation.liquid' %}
+ 
 
-<!--
+  <!--
   <div class="container-fluid front">
-    <div class="card__container">
-      <div class="card__title">
-        
-        {% render './logo.liquid' %}
+  <div class="card__container">
+  <div class="card__title">
 
-        <p>Inspired by Julia Cameron's
-          <i>
-            <a href="https://www.worldcat.org/title/artists-way-a-spiritual-path-to-higher-creativity/oclc/611985564">The Artist's Way</a>
-          </i>, Ritual accompanies your spiritual journey to higher creativity. It begins with cultivating a continuous practice.</p>
-      </div>
-      <br>
-      <p>Let's get started.</p>
-      <div class="card__signup-signin">
-        <a href="/auth/signup">
-          <button type="button" class="btn btn-light my-2 p-3">Create Account</button>
-        </a>
+  {% render './logo.liquid' %}
 
-        <a href="/auth/login">
-          <button type="button" class="btn btn-dark my-2 p-3">Sign In</button>
-        </a>
-      </div>
-    </div>
+  <p>Inspired by Julia Cameron's
+  <i>
+  <a href="https://www.worldcat.org/title/artists-way-a-spiritual-path-to-higher-creativity/oclc/611985564">The Artist's Way</a>
+  </i>, Ritual accompanies your spiritual journey to higher creativity. It begins with cultivating a continuous practice.</p>
+  </div>
+  <br>
+  <p>Let's get started.</p>
+  <div class="card__signup-signin">
+  <a href="/auth/signup">
+  <button type="button" class="btn btn-light my-2 p-3">Create Account</button>
+  </a>
+
+  <a href="/auth/login">
+  <button type="button" class="btn btn-dark my-2 p-3">Sign In</button>
+  </a>
+  </div>
+  </div>
 
   </div>
--->
+  -->
 {% endblock %}

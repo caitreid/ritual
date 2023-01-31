@@ -1,0 +1,28 @@
+.calendar {
+ 
+    .week__rail {
+        border-bottom: 1px grey solid; 
+
+        .week__date-range {
+            // padding-inline-start: 0;
+            padding: 1rem 2rem;
+            border-bottom: 1px #d0d0d0 solid;
+        }
+        .week__days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+
+            .day {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 4rem 0;
+            }
+        } 
+    }
+}
+
+.star {
+    fill:orange;
+    width: 2rem;
+}
