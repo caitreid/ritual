@@ -215,7 +215,7 @@ router.get('/:id/edit', (req, res) => {
 	const eventId = req.params.id
 	Event.findById(eventId)
 		.then(event => {
-			res.render('events/edit', { event })
+			res.render('events/edit', { event, ...req.session })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -241,7 +241,7 @@ router.put('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
 	const eventId = req.params.id
 	Event.findById(eventId)
-		.populate('project', 'title')
+		.populate('project')
         .populate('category', 'title')
 		
 		.then(event => {

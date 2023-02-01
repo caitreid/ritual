@@ -1,6 +1,7 @@
 // Import Dependencies
 const express = require('express')
 const Project = require('../models/project')
+const Event = require('../models/event')
 
 // Create router
 const router = express.Router()
@@ -78,8 +79,10 @@ router.get('/:id/edit', (req, res) => {
 	// we need to get the id
 	const projectId = req.params.id
 	Project.findById(projectId)
+		.populate('events', 'title')
+        // .populate('category', 'title')
 		.then(project => {
-			res.render('projects/edit', { project })
+			res.render('projects/edit', { project, ...req.session })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -105,6 +108,8 @@ router.put('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
 	const projectId = req.params.id
 	Project.findById(projectId)
+		.populate('events', 'title')
+
 		.then(project => {
             const {username, loggedIn, userId} = req.session
 			res.render('projects/show', { project, username, loggedIn, userId })
