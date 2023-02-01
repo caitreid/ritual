@@ -93,4 +93,4 @@ User will be able to
 
 # Scripts
 ## SASS compiling
-`sass --watch styles/main.scss public/styles.css`
+`sass --watch styles/styles.scss public/styles.css `
