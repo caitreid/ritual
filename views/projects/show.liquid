@@ -2,68 +2,50 @@
 {% block content %}
 <div class="container-fluid projects">
     {% render '../logo.liquid' %}
-    <article>
-        <h2>
-            {{ project.title | capitalize }}
-        </h2>
-        <br>
-        {% if project.due %}
-            <p><b>Due:</b> {{ project.due | date: "%A, %B %d, %Y"}}</p>
-            {% else %}
-            <p>No Due Date Assigned.</p>
-        {% endif %}
-        {% if project.description %}
-        
-            <p><b>Description:</b> {{ project.description }}</p>
-        {% endif %}
-
-        {% if project.owner == userId %}
-        <div class="btn-group">
-
-            <a href="/projects/{{ project.id }}/edit" class="btn btn-primary">Edit</a>
-            <form action="/projects/{{ project.id }}?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" class="btn btn-danger mx-2">
-            </form>
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <h2 class="text-capitalize">
+                {{ project.title | capitalize }}
+            </h2>
+            <br>
+            <p>Return to <a href="/projects">all projects</a>.</p>
         </div>
-        {% endif %}
-    </article>
-    {%-  comment  %} 
-    <hr>
-        {% if loggedIn %}
-            <div class="col-md-6">
-                <form action="/events/{{ project.id }}" method="POST">
-                    <fieldset>
-                        <legend>Add Event</legend>
-                        <label class="form-label">Title: </label>
-                        <input type="text" name="title" class="form-control mb-1">
-                        <label class="form-label">Description: </label>
-                        <input type="text" name="description" class="form-control mb-1">
-                        <label class="form-label">Date: </label>
-                        <input type="date" name="date" class="form-control mb-1">
-                    </fieldset>
-                    <input type="submit" class="btn btn-success" value="add event">
-                </form>
-            </div>
-        {% else %}
-            <div class="col-md-6">
-                <small>If you'd like to create an event, please log in...</small>
-            </div>
-        {% endif %}
-        <hr>
+        <div class="col-md-9 col-sm-12">
+            <div class="projects__events">
+                {% if project.due %}
+                    <p><b>Due:</b> {{ project.due | date: "%A, %B %d, %Y"}}</p>
+                    {% else %}
+                    <p>No Due Date Assigned.</p>
+                {% endif %}
+                {% if project.description %}
+                
+                    <p><b>Description:</b> {{ project.description }}</p>
+                {% endif %}
+
+                {% if project.events.length > 0 %}
+                <div class="">
+                    <p><b>Events</b></p>
+                    <ul>
+                        {% for event in project.events %}
+                            <li>{{ event.title }}</li>
+                            {{ event.category }}
+                            {{ event.description }}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <br>
+                {% if project.owner == userId %}
+                <div class="btn-group">
+
+                    <a href="/projects/{{ project.id }}/edit" class="btn btn-primary">Edit</a>
+                    <form action="/projects/{{ project.id }}?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete" class="btn btn-danger mx-2">
+                    </form>
+                </div>
+            {% endif %}
+        <br>
         
-        {% if project.events.length > 0 %}
-            <div class="container-sm justify-content-center">
-                {% for event in project.events %}
-                    {% render '../event.liquid', event: event, userId: userId, project: project %}
-                {% endfor %}
-            </div>
-        {% else %}
-            <small>No events yet...</small>
-            <br>
-            <br>
-        {% endif %}
-        {% endcomment %}
-    <br>
-    <p>Return to <a href="/projects">all projects</a>.</p>
+    </div>
 </div>
 {% endblock %}
