@@ -1,5 +1,6 @@
 .events {
     padding:2rem;
+
     .card {
         background-color: rgb(255 237 229);
         width:98%;
@@ -8,10 +9,19 @@
             width:45%;   
         }
 
+        &__edit {
+
+            @media (min-width:460px) {
+                width:100%;   
+            }
+
+        }
+
         .star {
             position: absolute;
             right: 2.5rem;
             top: 2.5rem;
+
         }
 
 
@@ -19,5 +29,12 @@
             background-color: rgb(249 137 87);
             border-color: rgb(249 137 87);
         }
+
+        .btn-group-vertical>.btn, .btn-group>.btn {
+            position: relative;
+            flex:none;
+        }
     }
+    
 }
+
