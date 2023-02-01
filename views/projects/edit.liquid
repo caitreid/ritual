@@ -31,6 +31,16 @@
         </div>
         <div class="py-2">
           <label class="form-label">Description:</label>
+          {% comment %}
+          <textarea 
+              rows="3"
+              type="text"
+              name="description"
+              placeholder="{{ project.description }}"
+              value="{{ project.description }}"
+              class="form-control">
+          </textarea>
+          {% endcomment %}
           <input
             type="text"
             name="description"
@@ -42,7 +52,7 @@
       <input
         type="submit"
         value="Save"
-        class="btn btn-success my-2">
+        class="btn btn-success my-4">
     </form>
     <br><br>
     <p>Return to <a href="/projects">all projects</a>.</p>
