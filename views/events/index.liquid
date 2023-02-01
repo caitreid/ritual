@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-md-3 col-sm-12">
             <h2 class="display-6">All Events</h2>
+            <p>Create a new <a href="/events/new">event</a>.</p>
         </div>
         
         <div class="col-md-9 col-sm-12">
@@ -12,7 +13,7 @@
             {% if events.length > 0 %}
                 {% for event in events %}
                 <div class="card m-2">
-                    <h3 class="card-header">{{ event.title | capitalize }}</h3>
+                    <h3 class="card-header text-capitalize">{{ event.title }}</h3>
                     <div class="card-body">
                         <p class="card-text">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="star bi bi-star-fill" viewBox="0 0 16 16">
