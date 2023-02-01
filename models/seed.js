@@ -44,6 +44,7 @@ db.on('open', () => {
         //     type: Schema.Types.ObjectID,
         //     ref: 'Event'
         // }]
+        events: ["63d83f96120f5132d63342c4", "63d83f96120f5132d63342c5", "63d83f96120f5132d63342c6", "63d83f96120f5132d63342c7", "63d83f96120f5132d63342c8", "63d83f96120f5132d63342c9", "63d83f96120f5132d63342ca", "63d83f96120f5132d63342cb", "63d83f96120f5132d63342cc", "63d83f96120f5132d63342cd", "63d83f96120f5132d63342cf", "63d83f96120f5132d63342ce"]
         },
         {
             title: "Greek Myth Project",
@@ -96,22 +97,6 @@ db.on('open', () => {
         })
     })
 
-    // title: { type: String, required: true },
-    // description: { type: String, required: false },
-    // date: { type: Date, required: true },
-    // category: {
-    //     type: Schema.Types.ObjectID,
-    //     ref: 'Category'
-    // }, // eventually set to an array to have more than one category
-    // project: {
-    //     type: Schema.Types.ObjectID,
-    //     ref: 'Project'
-    // },
-    // owner: {
-    //     type: Schema.Types.ObjectID,
-    //     ref: 'User',
-    // }
-
     const startEvents = [
         {   
          title: 'Writing at the public library',
@@ -120,6 +105,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342c4"
         },
         {   
             title: 'Studio visit',
@@ -128,6 +114,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342c5"
         },
         {   
             title: 'Researching sources',
@@ -136,6 +123,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342c6"
         },
         {   
             title: 'Editing',
@@ -144,6 +132,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342c7"
         },
         {   
             title: 'Writing at the public library',
@@ -152,6 +141,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342c8"
         },
         {   
             title: 'Studio visit',
@@ -160,6 +150,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342c9"
         },
         {   
             title: 'Researching sources',
@@ -168,6 +159,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342ca"
         },
         {   
             title: 'Editing',
@@ -176,6 +168,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342cb"
         },        {   
             title: 'Writing at the public library',
             description: 'Here is the description',
@@ -183,6 +176,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342cc"
         },
         {   
             title: 'Studio visit',
@@ -191,6 +185,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342cd"
         },
         {   
             title: 'Researching sources',
@@ -199,6 +194,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342cf"
         },
         {   
             title: 'Editing',
@@ -207,6 +203,7 @@ db.on('open', () => {
             category: '63d81c89879c235c358ebd46', // Project Planning
             project: '63d81c89879c235c358ebd41', // New arts portfolio website
             owner: "63d007f2cfa536211c32c6ca", // caitreid
+            _id: "63d83f96120f5132d63342ce"
         }
 
     ]
