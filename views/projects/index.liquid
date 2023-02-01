@@ -2,14 +2,15 @@
 {% block content %}
   <div class="container-fluid projects">
     {% render '../logo.liquid' %}
-    <div class="projects__title">
-        <h2 class="display-6">All Projects</h2>
-        <p>Here are all the projects you've created to date.</p>
+    <div class="">
+        <h2 class="display-6 projects__title">All Projects</h2>
+        <br>
+        <p>Create a new <a href="/projects/new">project</a>.</p>
     </div>
-    <div class="row">
+    <div class="row mx-4">
       {% if projects.length > 0 %}
         {% for project in projects %}
-          <div class="card card__projects m-2">
+          <div class="card card__projects m-3">
             <h3 class="card-header">{{ project.title }}</h5>
             <div class="card-body">
               {% if project.due %}
@@ -23,15 +24,7 @@
                 </b>
                 <p>{{ project.description }}</p>
               {% endif %}
-              {% if project.events.length > 0 %}
-                <b>Description:
-                </b>
-                {% for event in events %}
-                  <li>
-                    {{ event }}
-                  </li>
-                {% endfor %}
-              {% endif %}
+              
 
               <a href="/projects/{{ project.id }}" class="btn btn-info">
                 View
@@ -44,5 +37,7 @@
           <a href="/projects/new">project</a>.</p>
       {% endif %}
     </div>
+    <br>
+    <br>
   </div>
 {% endblock %}
