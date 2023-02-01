@@ -1,45 +1,50 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-  <div class="container-fluid front">
-    
-    <div class="card__container">
-        {% render '../logo.liquid' %}
-      <form action="/projects" method="POST">
-        <fieldset>
-          <legend>Create New Project</legend>
-          <div class="py-2">
-            <label class="form-label">Title:
-            </label>
-            <input
-              type="text"
-              name="title"
-              placeholder="Project title"
-              class="form-control">
-          </div>
-          <div class="py-2">
-            <label class="form-label">Due Date:</label>
-            <input
-              type="Date"
-              name="due"
-              placeholder=""
-              class="form-control">
-          </div>
-          <div class="py-2">
-            <label class="form-label">Description:</label>
-            <textarea 
-              rows="3"
-              type="text"
-              name="description"
-              placeholder=""
-              class="form-control">
-              </textarea>
-          </div>
-        </fieldset>
-        <input
-          type="submit"
-          value="Create New Project"
-          class="btn btn-dark my-2 p-3">
-      </form>
-    </div>
+<div class="container-fluid projects">
+  {% render '../logo.liquid' %}
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <h2 class="display-6">Create <br>New Project</h2>
+        </div>
+
+        <div class="col-md-9 col-sm-12">
+          <div class="row">
+            <form class="new" action="/projects" method="POST">
+              <fieldset>
+                <div class="py-2">
+                  <label class="form-label">Title:
+                  </label>
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Project title"
+                    class="form-control">
+                </div>
+                <div class="py-2">
+                  <label class="form-label">Due Date:</label>
+                  <input
+                    type="Date"
+                    name="due"
+                    placeholder=""
+                    class="form-control">
+                </div>
+                <div class="py-2">
+                  <label class="form-label">Description:</label>
+                  <textarea 
+                    rows="3"
+                    type="text"
+                    name="description"
+                    placeholder=""
+                    class="form-control">
+                    </textarea>
+                </div>
+              </fieldset>
+              <input
+                type="submit"
+                value="Create New Project"
+                class="btn btn-dark my-4">
+            </form>
+        </div>
+      </div>
   </div>
 {% endblock %}
