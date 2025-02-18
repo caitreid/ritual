@@ -1,6 +1,6 @@
 # Ritual
 
-Real progress comes from working on a goal every day. Ritual is a github-like tracker for year-long ambitions.
+Real progress comes from working on your goals every day. Ritual is a github-like tracker for year-long ambitions.
 
 ## Technologies Used
 * Javascript
